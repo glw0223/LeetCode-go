@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/LeetCode-go/twoSum"
+	"github.com/glw0223/LeetCode-go/twoSum"
 )
 
 func main() {
