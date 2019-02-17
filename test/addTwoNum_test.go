@@ -12,6 +12,8 @@ func TestAddTwoNumbers(t *testing.T) {
 	arr1 := []int{2, 4, 3}
 	arr2 := []int{5, 6, 4}
 
+	fmt.Println("输入1：", arr1, "输入2：", arr2)
+
 	head1 := &addTwoNum.ListNode{
 		Val:  -1,
 		Next: nil,
@@ -25,7 +27,6 @@ func TestAddTwoNumbers(t *testing.T) {
 		temp.Next = &addTwoNum.ListNode{v, nil}
 		temp = temp.Next
 	}
-
 	temp = head2
 	for _, v := range arr2 {
 		temp.Next = &addTwoNum.ListNode{v, nil}
@@ -38,5 +39,5 @@ func TestAddTwoNumbers(t *testing.T) {
 		str = str + strconv.Itoa(v.Val)
 		v = v.Next
 	}
-	fmt.Println(str)
+	fmt.Println("结果是:", str)
 }
