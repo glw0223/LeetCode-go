@@ -2,6 +2,7 @@ package findMedianSortedArrays
 
 import (
 	"fmt"
+	"github.com/glw0223/LeetCode-go/util"
 )
 
 /*
@@ -24,24 +25,10 @@ nums2 = [3, 4]
 
 则中位数是 (2 + 3)/2 = 2.5
  */
-func max(A, B int)int{
-	if A>B{
-		return A
-	}else {
-		return B
-	}
-}
-func min(A, B int) int {
-	if A<B{
-		return A
-	}else {
-		return B
-	}
-}
 func FindMedianSortedArrays(nums1 []int, nums2 []int) (result float64) {
 	m := len(nums1)
 	n := len(nums2)
-	if (m > n) { // to ensure m<=n
+	if m > n { // to ensure m<=n
 		temp := nums1
 		nums1 = nums2
 		nums2 = temp
@@ -51,33 +38,33 @@ func FindMedianSortedArrays(nums1 []int, nums2 []int) (result float64) {
 	fmt.Println("m:",m,"n:",n)
 	fmt.Println("nums1:",nums1,"nums2:",nums2)
 	iMin := 0; iMax := m; halfLen := (m + n + 1)>>1
-	for (iMin <= iMax) {
+	for iMin <= iMax {
 		i := (iMin + iMax)>>1
 		j := halfLen - i
-		if (i<iMax && nums2[j-1]>nums1[i]){
+		if i<iMax && nums2[j-1]>nums1[i] {
 			iMin = i + 1 // i is too small
-		}else if (i>iMin && nums1[i-1]>nums2[j]) {
+		}else if i>iMin && nums1[i-1]>nums2[j] {
 			iMax = i - 1 // i is too big
 		}else { // i is perfect
 			maxLeft := 0
-			if (i == 0) {
+			if i == 0 {
 				maxLeft = nums2[j-1]
-			}else if (j == 0){
+			}else if j == 0 {
 				maxLeft = nums1[i-1]
 			}else {
-				maxLeft = max(nums1[i-1], nums2[j-1])
+				maxLeft = util.Max(nums1[i-1], nums2[j-1])
 			}
-			if ( (m + n) % 2 == 1 ) {
+			if  (m + n) % 2 == 1 {
 				return float64(maxLeft)
 			}
 
 			minRight := 0;
-			if (i == m) {
+			if i == m {
 				minRight = nums2[j]
-			} else if (j == n) {
+			} else if j == n {
 				minRight = nums1[i]
 			} else {
-				minRight = min(nums2[j], nums1[i])
+				minRight = util.Min(nums2[j], nums1[i])
 			}
 
 			return (float64(maxLeft + minRight))/2.0
