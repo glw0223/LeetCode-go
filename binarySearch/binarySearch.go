@@ -42,6 +42,29 @@ func BinarySearch1(sortedArray []int, key int)(result string){
 	return
 }
 
+func BinarySearch3(sortedArray []int, key int)(result string){
+	result="not find the key"
+	max:=len(sortedArray)
+	if max <= 0 {
+		result = "有序数组异常"
+	}else {
+		min:=0
+		max = max -1
+		for min<=max {
+			index:=(min+max)>>1
+			if key<sortedArray[index]{
+				max=index-1
+			}else if key>sortedArray[index]{
+				min=index+1
+			}else {
+				result=fmt.Sprintf("find it and the index is %d",index)
+				break
+			}
+		}
+	}
+	return
+}
+
 //递归法
 func BinarySearch2(sortedArray []int, min, max, key int) (result string){
 	if len(sortedArray) <= 0 {
