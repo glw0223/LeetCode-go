@@ -11,3 +11,4 @@ https://leetcode-cn.com/problemset/all/
 4. findMedianSortedArrays 寻找两个有序数组的中位数
 5. longestPalindrome 最长回文
 6. zConvert Z字形变换
+7. myAtoi 字符串转整数
