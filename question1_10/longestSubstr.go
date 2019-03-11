@@ -1,6 +1,9 @@
-package longestSubstr
+package question1_10
 
-import "github.com/glw0223/LeetCode-go/util"
+import (
+	"fmt"
+	"github.com/glw0223/LeetCode-go/util"
+)
 
 /*
 给定一个字符串，请你找出其中不含有重复字符的 最长子串 的长度。
@@ -24,6 +27,7 @@ import "github.com/glw0223/LeetCode-go/util"
 */
 
 func LengthOfLongestSubstring(s string) (subLen int) {
+	fmt.Println(s)
 	myLen := len(s)
 	myMap := make(map[string]int)
 	i := 0

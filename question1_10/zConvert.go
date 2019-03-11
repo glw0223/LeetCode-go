@@ -1,4 +1,4 @@
-package zConvert
+package question1_10
 
 import "fmt"
 

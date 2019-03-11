@@ -1,4 +1,4 @@
-package findMedianSortedArrays
+package question1_10
 
 import (
 	"fmt"

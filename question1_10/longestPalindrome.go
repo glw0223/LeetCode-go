@@ -1,4 +1,4 @@
-package longestPalindrome
+package question1_10
 
 import "github.com/glw0223/LeetCode-go/util"
 

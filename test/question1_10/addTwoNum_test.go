@@ -1,8 +1,8 @@
-package test
+package question1_10
 
 import (
 	"fmt"
-	"github.com/glw0223/LeetCode-go/addTwoNum"
+	"github.com/glw0223/LeetCode-go/question1_10"
 	"strconv"
 	"testing"
 )
@@ -14,26 +14,26 @@ func TestAddTwoNumbers(t *testing.T) {
 
 	fmt.Println("输入1：", arr1, "输入2：", arr2)
 
-	head1 := &addTwoNum.ListNode{
+	head1 := &question1_10.ListNode{
 		Val:  -1,
 		Next: nil,
 	}
-	head2 := &addTwoNum.ListNode{
+	head2 := &question1_10.ListNode{
 		Val:  -1,
 		Next: nil,
 	}
 	temp := head1
 	for _, v := range arr1 {
-		temp.Next = &addTwoNum.ListNode{v, nil}
+		temp.Next = &question1_10.ListNode{v, nil}
 		temp = temp.Next
 	}
 	temp = head2
 	for _, v := range arr2 {
-		temp.Next = &addTwoNum.ListNode{v, nil}
+		temp.Next = &question1_10.ListNode{v, nil}
 		temp = temp.Next
 	}
 
-	v := addTwoNum.AddTwoNumbers(head1, head2)
+	v := question1_10.AddTwoNumbers(head1, head2)
 	var str string
 	for v != nil {
 		str = str + strconv.Itoa(v.Val)
