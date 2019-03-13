@@ -42,3 +42,6 @@ func TestA14_longestCommonPrefix(t *testing.T){
 func TestA15_threeSum(t *testing.T) {
 
 }
+func TestA16_threeSumClosest(t *testing.T) {
+
+}
