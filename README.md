@@ -19,3 +19,4 @@ https://leetcode-cn.com/problemset/all/
 11. maxArea 盛最多水的容器
 12. intToRoman 整数转罗马数字
 13. romanToInt 罗马数字转整数(未实现)
+14. longestCommonPrefix 最长公共前缀
