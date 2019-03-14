@@ -2,6 +2,7 @@ package question11_20
 
 import (
 	"github.com/glw0223/LeetCode-go/util"
+	"strings"
 )
 
 /*
@@ -159,3 +160,72 @@ func A19_removeNthFromEnd(head *ListNode, n int) *ListNode {
 	return dummy.Next
 }
 
+/*
+给定一个只包括 '('，')'，'{'，'}'，'['，']' 的字符串，判断字符串是否有效。
+有效字符串需满足：
+左括号必须用相同类型的右括号闭合。
+左括号必须以正确的顺序闭合。
+注意空字符串可被认为是有效字符串。
+示例 1:
+输入: "()"
+输出: true
+示例 2:
+输入: "()[]{}"
+输出: true
+示例 3:
+输入: "(]"
+输出: false
+示例 4:
+输入: "([)]"
+输出: false
+示例 5:
+输入: "{[]}"
+输出: true
+ */
+func isMatch(s1,s2 string) bool {
+	var match map [string]string
+	match = make(map[string]string,6)
+	match["["] = "]";match["]"] = "[";match["("] = ")";match[")"] = "(";match["{"] = "}";match["}"] = "{"
+	if match[s1] == s2{
+		return true
+	}else {
+		return false
+	}
+}
+//0:open 1:close
+func openOrClose(s string) int {
+	if s=="[" || s=="{" || s=="("{
+		return 0
+	}else{
+		return 1
+	}
+}
+func A20_isValid(s string) bool {
+	rightStr:="[]{}()"
+	length:=len(s)
+	if length == 0 || length%2!=0{
+		return false
+	}
+	var temp string
+	for i:=0;i<length;i++{
+		t:=s[i:i+1]
+		if strings.Contains(rightStr,t){
+			if openOrClose(t)==0{
+				temp+=t
+			}else {
+				if len(temp)==0{
+					return false
+				}else {
+					if isMatch(temp[len(temp)-1:],t){
+						temp=temp[0:len(temp)-1]
+					}else {
+						return false
+					}
+				}
+			}
+		}else {
+			return false
+		}
+	}
+	return temp == ""
+}

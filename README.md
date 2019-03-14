@@ -23,3 +23,4 @@ https://leetcode-cn.com/problemset/all/
 15. threeSum 三数之和
 16. threeSumClosest 最接近的三数之和
 19. removeNthFromEnd 删除链表的倒数第N个节点
+20. isValid 有效的括号

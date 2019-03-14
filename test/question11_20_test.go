@@ -65,3 +65,16 @@ func TestA19_removeNthFromEnd(t *testing.T)  {
 	str=strings.TrimRight(str,"->")
 	fmt.Println(str)
 }
+func TestA20_isValid(t *testing.T) {
+	var result bool
+	result=question11_20.A20_isValid("()")
+	fmt.Println(result)
+	result=question11_20.A20_isValid("()[]{}")
+	fmt.Println(result)
+	result=question11_20.A20_isValid("(]")
+	fmt.Println(result)
+	result=question11_20.A20_isValid("([)]")
+	fmt.Println(result)
+	result=question11_20.A20_isValid("{[]}")
+	fmt.Println(result)
+}
