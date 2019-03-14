@@ -36,3 +36,20 @@ func TestA24_swapPairs(t *testing.T) {
 	}
 	fmt.Println(str)
 }
+
+func TestA26_removeDuplicates(t *testing.T) {
+	arr:=[]int{1,1,2}
+	result:=question21_30.A26_removeDuplicates(arr)
+	str:="开始"
+	for i:=0;i<result;i++{
+		str+=fmt.Sprintf("->%d",arr[i])
+	}
+	fmt.Println(str)
+	arr=[]int{0,0,1,1,1,2,2,3,3,4}
+	result=question21_30.A26_removeDuplicates(arr)
+	str="开始"
+	for i:=0;i<result;i++{
+		str+=fmt.Sprintf("->%d",arr[i])
+	}
+	fmt.Println(str)
+}

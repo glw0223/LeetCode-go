@@ -128,3 +128,57 @@ func A24_swapPairs(head *ListNode) *ListNode {
     p.Next = A24_swapPairs(p.Next)
     return head
 }
+
+/*
+给出一个链表，每 k 个节点一组进行翻转，并返回翻转后的链表。
+
+k 是一个正整数，它的值小于或等于链表的长度。如果节点总数不是 k 的整数倍，那么将最后剩余节点保持原有顺序。
+
+示例 :
+
+给定这个链表：1->2->3->4->5
+
+当 k = 2 时，应当返回: 2->1->4->3->5
+
+当 k = 3 时，应当返回: 3->2->1->4->5
+
+说明 :
+
+你的算法只能使用常数的额外空间。
+你不能只是单纯的改变节点内部的值，而是需要实际的进行节点交换。
+ */
+/**
+* Definition for singly-linked list.
+* type ListNode struct {
+*     Val int
+*     Next *ListNode
+* }
+*/
+func A25_reverseKGroup(head *ListNode, k int) *ListNode {
+    return head
+}
+/*
+给定一个排序数组，你需要在原地删除重复出现的元素，使得每个元素只出现一次，返回移除后数组的新长度。
+
+不要使用额外的数组空间，你必须在原地修改输入数组并在使用 O(1) 额外空间的条件下完成。
+示例 1:
+
+给定数组 nums = [1,1,2],
+
+函数应该返回新的长度 2, 并且原数组 nums 的前两个元素被修改为 1, 2。
+
+你不需要考虑数组中超出新长度后面的元素。
+ */
+func A26_removeDuplicates(nums []int) int {
+    if len(nums)==0 {
+        return 0
+    }
+    i:=0
+    for j:=1; j<len(nums); j++ {
+        if nums[j] != nums[i] {
+            i++
+            nums[i] = nums[j]
+        }
+    }
+    return i + 1
+}
