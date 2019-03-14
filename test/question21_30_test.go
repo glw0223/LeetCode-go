@@ -53,3 +53,13 @@ func TestA26_removeDuplicates(t *testing.T) {
 	}
 	fmt.Println(str)
 }
+
+func TestA27_removeElement(t *testing.T){
+	arr:=[]int{3,2,2,3}
+	result:=question21_30.A27_removeElement(arr,3)
+	fmt.Println(result)
+
+	arr1:=[]int{0,1,2,2,3,0,4,2}
+	result1:=question21_30.A27_removeElement(arr1,2)
+	fmt.Println(result1)
+}

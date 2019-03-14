@@ -30,3 +30,4 @@ https://leetcode-cn.com/problemset/all/
 24. swapPairs 两两交换链表中的节点
 25. reverseKGroup k个一组翻转链表
 26. removeDuplicates 删除排序数组中的重复项
+27. removeElement 移除元素
