@@ -27,3 +27,4 @@ https://leetcode-cn.com/problemset/all/
 
 21. mergeTwoLists 合并两个有序链表
 22. generateParenthesis 括号生成
+24. swapPairs 两两交换链表中的节点

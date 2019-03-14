@@ -22,3 +22,17 @@ func TestA21_mergeTwoLists(t *testing.T) {
 	}
 	fmt.Println(str)
 }
+
+func TestA24_swapPairs(t *testing.T) {
+	head:=question21_30.ListNode{1,nil}
+	head.Next=&question21_30.ListNode{2,nil}
+	head.Next.Next=&question21_30.ListNode{3,nil}
+	head.Next.Next.Next=&question21_30.ListNode{4,nil}
+	result:=question21_30.A24_swapPairs(&head)
+	str:="开始"
+	for result!=nil{
+		str+=fmt.Sprintf("->%d",result.Val)
+		result=result.Next
+	}
+	fmt.Println(str)
+}
