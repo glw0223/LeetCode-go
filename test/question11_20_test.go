@@ -3,6 +3,7 @@ package test
 import (
 	"fmt"
 	"github.com/glw0223/LeetCode-go/question11_20"
+	"strings"
 	"testing"
 )
 
@@ -44,4 +45,23 @@ func TestA15_threeSum(t *testing.T) {
 }
 func TestA16_threeSumClosest(t *testing.T) {
 
+}
+func TestA19_removeNthFromEnd(t *testing.T)  {
+
+	head:=question11_20.ListNode{1,nil}
+	temp1:=&head
+	for i:=2;i<6;i++ {
+		temp:=question11_20.ListNode{i,nil}
+		temp1.Next = &temp
+		temp1 = temp1.Next
+	}
+
+	result:=question11_20.A19_removeNthFromEnd(&head,2)
+	var str string
+	for result != nil{
+		str+=fmt.Sprintf("%d->",result.Val)
+		result = result.Next
+	}
+	str=strings.TrimRight(str,"->")
+	fmt.Println(str)
 }
